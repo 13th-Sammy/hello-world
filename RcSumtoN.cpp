@@ -8,7 +8,7 @@ void sumToN(int N, int sum)
         cout << sum << endl;
         return ;
     }
-    sumToN(--N, sum+N);
+    sumToN(N-1, sum+N);
 }
 
 int main()
