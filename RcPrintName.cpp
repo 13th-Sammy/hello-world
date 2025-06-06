@@ -1,16 +1,12 @@
 #include<iostream>
 using namespace std;
 
-void printName (string name, int cnt)
+void printName (string name, int i, int cnt)
 {
-    static int i = 1;
-
-    cout << i << ". " << name << endl;
-    i++;
-    cnt--;
-    if (cnt == 0)
+    if (i > cnt)
         return;
-    printName(name, cnt);
+    cout << i << ". " << name << endl;
+    printName(name, i+1, cnt);
 }
 
 int main()
@@ -21,7 +17,7 @@ int main()
     cout << "Enter name\n"; cin >> name;
     cout << "Enter count\n"; cin >> cnt;
     cout << endl;
-    printName(name, cnt);
+    printName(name, 1, cnt);
 
     return 0;
 }
