@@ -1,21 +1,19 @@
 #include <iostream>
 using namespace std;
 
-void sumToN(int i, int N)
+void sumToN(int N, int sum)
 {
-    static int s = 0;
-    s = s+i;
-    if (i == N)
+    if (N<1)
     {
-        cout << s << endl;
-        return;
-    }   
-    sumToN(i+1, N);
+        cout << sum << endl;
+        return ;
+    }
+    sumToN(--N, sum+N);
 }
 
 int main()
 {
     int N;
     cout << "Sum till ?\n"; cin >> N;
-    sumToN(1, N);
+    sumToN(N,0);
 }
