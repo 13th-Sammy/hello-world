@@ -112,6 +112,8 @@ void mergeSort(int arr[], int low, int high)
 
 int partition(int arr[], int low, int high)
 {
+    int randomIndex = low + rand()%(high-low);
+    swap(arr[high], arr[randomIndex]);
     int i=low-1;
 
     for(int j = low; j < high; j++)
