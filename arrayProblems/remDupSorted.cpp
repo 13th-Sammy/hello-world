@@ -22,6 +22,9 @@ int main()
         cout << ans[i] << " ";
     cout << endl;*/
 
+    //Only works on sorted array
+    //because arr[i] changes everytime
+    //and can only compare with what is after ONCE
     int i = 0;
     for(int j=1; j<n; j++)
     {
