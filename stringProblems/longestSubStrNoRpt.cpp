@@ -18,7 +18,7 @@ int main()
         char current=s[right];
 
         if(charIndex.find(current) != charIndex.end() && charIndex[current]>=left)
-            left=charIndex[current]+1;
+            left=max(left,charIndex[current]+1);
         
         charIndex[current]=right;
 
