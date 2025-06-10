@@ -11,6 +11,7 @@ int main()
     unordered_map<char, int> charIndex;
     int maxLen=0;
     int left=0;
+    int ansLeft;
 
     for(int right=0; right<s.length(); right++)
     {
@@ -21,8 +22,12 @@ int main()
         
         charIndex[current]=right;
 
-        maxLen=max(maxLen, right-left+1);
+        if(right-left+1>maxLen)
+        {
+            maxLen=right-left+1;
+            ansLeft=left;
+        }
     }
-    cout << maxLen;
+    cout << s.substr(ansLeft, maxLen);
     return 0;
 }
