@@ -7,6 +7,7 @@ int main()
 
     string s="53478";
     
+    // Brute Force -
     int max=-1;
     for(int i=0; i<s.length(); i++)
     {
@@ -14,15 +15,9 @@ int main()
         for(int j=i; j<s.length(); j++)
         {
             num=num+s[j];
-            int k=0;
-            while(k<num.length());
-            {
-                int d = (int)num[k];
-                int n = 10*n+d;
-                if (n>max)
-                    max=n;
-                k++; 
-            }
+            int n=stoi(num);
+            if (n%2!=0 && n>max)
+                max=n;
         }
     }
     cout << max;
