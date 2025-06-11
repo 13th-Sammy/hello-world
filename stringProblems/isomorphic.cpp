@@ -9,7 +9,7 @@ int main()
     string a="add";
     string b="egg";
 
-    unordered_map<char, int> mapAB, mapBA;
+    unordered_map<char, char> mapAB, mapBA;
     int flag=0;
 
     if(a.length()!=b.length())
