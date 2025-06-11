@@ -7,6 +7,8 @@ int main()
     int arr[]={1,1,1,2,2,2,0,0,1,2,0,0,0};
     int n = sizeof(arr)/sizeof(arr[0]);
     
+    // low for 0s, mid for traverse,
+    // high for 2s. No mid++ for high,mid swap
     int low=0, mid=0, high=n-1;
     while(mid<=high)
     {

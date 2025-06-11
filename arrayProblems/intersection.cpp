@@ -11,6 +11,8 @@ int main()
     int arr2[]={3,4,4,5,6,6,7,8,9};
     int n2=sizeof(arr2)/sizeof(arr2[0]);
 
+    // Map to store visited, if visited 
+    // for arr2[] then cout
     unordered_map<int, int> visited;
     for(int i=0; i<n1; i++)
         visited[arr1[i]]=1;
@@ -23,6 +25,9 @@ int main()
     }
     cout << '\n';
     
+    // Merge sort type but only push
+    // arr1[i] when equal to arr[2]
+    // with result.back()!=arr[i] check
     /*int i=0,j=0;
     vector<int> ans;
     while(i<n1 && j<n2)
