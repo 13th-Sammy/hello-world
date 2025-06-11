@@ -1,5 +1,5 @@
 #include<iostream>
-#include<unordered_map>
+#include<set>
 #include<vector>
 
 int main()
@@ -11,7 +11,19 @@ int main()
     int arr2[]={3,4,5,6,6,7,8,9};
     int n2=sizeof(arr2)/sizeof(arr2[0]);
 
-    int i=0,j=0;
+    set<int> set;
+
+    for(int i=0; i<n1; i++)
+        set.insert(arr1[i]);
+    
+    for(int i=0; i<n2; i++)
+        set.insert(arr2[i]);
+    
+    for(auto it=set.begin(); it!=set.end(); it++)
+        cout << *it << " ";
+    cout << '\n';
+    
+    /*int i=0,j=0;
     vector<int> ans;
     while(i<n1 && j<n2)
     {
@@ -51,7 +63,7 @@ int main()
 
     for(int i=0; i<ans.size(); i++)
         cout << ans[i] << " ";
-    cout << '\n';
-    
+    cout << '\n';*/
+
     return 0;
 }
