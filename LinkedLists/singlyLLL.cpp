@@ -127,6 +127,32 @@ class singlyLLL
             delete toDelete;
         }
 
+        int countLL()
+        {
+            Node* temp=head;
+            int c=0;
+            while(temp!=nullptr)
+            {
+                c++;
+                temp=temp->next;
+            }
+            return c;
+        }
+
+        int searchLL(int d)
+        {
+            Node* temp=head;
+            int i=1;
+            while(temp!=nullptr)
+            {
+                if(temp->data==d)
+                    return i;
+                temp=temp->next;
+                i++;
+            }
+            return -1;
+        }
+
         void showList() 
         {
             Node* temp=head;
@@ -159,6 +185,13 @@ int main()
     List.deleteHead();
     List.deleteTail();
     List.showList();
+    int count=List.countLL();
+    std::cout << "Count - " << count << '\n';
+    int pos=List.searchLL(5);
+    if(pos==-1)
+        std::cout << "Not Found\n";
+    else
+        std::cout << "Found at - " << pos << '\n';
     
     return 0;
 }
