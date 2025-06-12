@@ -153,6 +153,20 @@ class singlyLLL
             return -1;
         }
 
+        void reverseLL()
+        {
+            Node* prev=nullptr;
+            Node* temp=head;
+            while(temp!=nullptr)
+            {
+                Node* next=temp->next;
+                temp->next=prev;
+                prev=temp;
+                temp=next;
+            }
+            head=prev;
+        }
+
         void showList() 
         {
             Node* temp=head;
@@ -192,6 +206,8 @@ int main()
         std::cout << "Not Found\n";
     else
         std::cout << "Found at - " << pos << '\n';
+    List.reverseLL();
+    List.showList();
     
     return 0;
 }
