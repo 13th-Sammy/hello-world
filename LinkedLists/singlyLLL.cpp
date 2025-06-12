@@ -29,6 +29,13 @@ class singlyLLL
             head=newNode;
         }
 
+        void deleteHead()
+        {
+            Node* temp=head;
+            head=head->next;
+            delete temp;
+        }
+
         void insertAtTail(int d) 
         {
             Node* newNode=new Node(d);
@@ -42,6 +49,25 @@ class singlyLLL
             while(temp->next!=nullptr)
                 temp=temp->next;
             temp->next=newNode;    
+        }
+
+        void deleteTail()
+        {
+            if(head==nullptr)
+                return;
+    
+            if(head->next==nullptr)
+            {
+                delete head;
+                head=nullptr;
+                return;
+            }
+
+            Node* temp=head;
+            while(temp->next->next!=nullptr) 
+                temp=temp->next;
+            delete temp->next;
+            temp->next=nullptr;
         }
 
         void insertAtPos(int d, int pos) 
@@ -106,7 +132,7 @@ class singlyLLL
             Node* temp=head;
             while(temp!=nullptr)
             {
-                std::cout << temp->data << '\n';
+                std::cout << temp->data << '\n'; //segfault here
                 temp=temp->next;
             }
         }
@@ -130,6 +156,8 @@ int main()
     List.insertAtPos(9, 4);
     List.deleteAtPos(2);
     List.insertAtTail(13);
+    List.deleteHead();
+    List.deleteTail();
     List.showList();
     
     return 0;
