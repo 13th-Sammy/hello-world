@@ -27,9 +27,21 @@ void insertAtTail(Node*& head, int d)
     temp->next=newNode;
 }
 
+void showList(Node* head)
+{
+    while(head!=nullptr)
+    {
+        std::cout << head->data << " ";
+        head=head->next;
+    }
+    std::cout << '\n';
+}
+
 bool isPalindrome(Node* head)
 {
-    //find mid element
+    bool isPal=true;
+    
+    // Find mid element
     Node* slow=head;
     Node* fast=head;
     while(fast!=nullptr && fast->next!=nullptr)
@@ -38,7 +50,7 @@ bool isPalindrome(Node* head)
         fast=fast->next->next;
     }
 
-    //reverse from slow to end;
+    // Reverse from slow to end;
     Node* prev=nullptr;
     Node* temp=slow;
     while(temp!=nullptr)
@@ -50,17 +62,40 @@ bool isPalindrome(Node* head)
     }
     slow=prev;
 
-    //check head to mid and mid to end
+    // Check head to mid and mid to end
     Node* t1=head;
     Node* t2=slow;
     while(t1!=nullptr && t2!=nullptr)
     {
         if(t1->data!=t2->data)
-            return false;
+        {
+            isPal=false;
+            break;
+        }  
         t1=t1->next;
         t2=t2->next;
     }
-    return true;
+
+    // Re-reverse second half for restoration
+    Node* prev2=nullptr;
+    Node* temp2=slow;
+    while(temp2!=nullptr)
+    {
+        Node* next=temp2->next;
+        temp2->next=prev2;
+        prev2=temp2;
+        temp2=next;
+    }
+    slow=prev2;
+
+    // Don't do this, the list was 
+    // never split. This creates a cycle.
+    // (We are using Node* not Node*&)
+    /*while(head->next!=nullptr)
+        head=head->next;
+    head->next=slow;*/
+    
+    return isPal;
 }
 
 int main()
@@ -69,10 +104,11 @@ int main()
     insertAtTail(head, 5);
     insertAtTail(head, 6);
     insertAtTail(head, 5);
-    if(isPalindrome(head)) //calling this splits the list in half
+    if(isPalindrome(head)) 
         std::cout << "Palindrome\n";
     else
         std::cout << "Not Palindrome\n";
+    showList(head);
 
     return 0;
 }
