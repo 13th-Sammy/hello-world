@@ -20,6 +20,10 @@ int main()
         hash[s2[i]]--;
     }
 
+    // OR, hash1[s1[i]]++, hash2[s2[i]]++;
+    // if hash1==hash2, true
+    // It compares every key with their frequencies
+
     for(int i=0; i<s1.length(); i++)
     {
         if(hash[s1[i]]!=0)

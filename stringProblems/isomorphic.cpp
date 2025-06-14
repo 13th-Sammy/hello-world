@@ -15,6 +15,9 @@ int main()
     if(a.length()!=b.length())
         flag=1;
 
+    // Map char to char both ways, if a char appears
+    // again it should have the same mapping. if c2 
+    // is different it won't be isomorphic    
     for (int i=0; i<a.length(); i++)
     {
         char cA=a[i], cB=b[i];

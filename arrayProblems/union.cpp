@@ -11,6 +11,8 @@ int main()
     int arr2[]={3,4,5,6,6,7,8,9};
     int n2=sizeof(arr2)/sizeof(arr2[0]);
 
+    // Set stores only unique so store 
+    // everything in set for union
     set<int> set;
 
     for(int i=0; i<n1; i++)
@@ -23,6 +25,9 @@ int main()
         cout << *it << " ";
     cout << '\n';
     
+    // Merge Sort type merging, but include
+    // result.back!=arr[i] before pushing arr[i]
+    // to avoid duplicates
     /*int i=0,j=0;
     vector<int> ans;
     while(i<n1 && j<n2)

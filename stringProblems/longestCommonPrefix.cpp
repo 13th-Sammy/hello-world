@@ -9,6 +9,8 @@ int main()
     int n=sizeof(str)/sizeof(str[0]);
 
     string prefix=str[0];
+    // compare prefix with every other string 
+    // as long as first elements match
     for(int i=1; i<n; i++)
     {
         int j=0;

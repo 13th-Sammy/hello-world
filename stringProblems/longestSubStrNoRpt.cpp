@@ -13,6 +13,10 @@ int main()
     int left=0;
     int ansLeft;
 
+    // right-left is our array. if character already present
+    // in charIndex<char, int> and is inside the window,
+    // shift left to go beyond the duplicate character
+    // index hash + sliding winoow approach
     for(int right=0; right<s.length(); right++)
     {
         char current=s[right];
