@@ -179,7 +179,6 @@ class doublyLLL
     void verifyDLL()
     {
         if(head==nullptr) return;
-        int flag=0;
         Node* temp=head;
         while(temp->next!=nullptr)
         {
@@ -190,8 +189,7 @@ class doublyLLL
             }
             temp=temp->next;
         }
-        if(flag==0)
-            std::cout << "Valid DLL\n";
+        std::cout << "Valid DLL\n";
     }
 
     ~doublyLLL()
