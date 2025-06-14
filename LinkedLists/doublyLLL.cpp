@@ -176,6 +176,24 @@ class doublyLLL
         std::cout << '\n';
     }
 
+    void verifyDLL()
+    {
+        if(head==nullptr) return;
+        int flag=0;
+        Node* temp=head;
+        while(temp->next!=nullptr)
+        {
+            if(temp->next->prev!=temp)
+            {
+                std::cout << "Not DLL\n";
+                return;
+            }
+            temp=temp->next;
+        }
+        if(flag==0)
+            std::cout << "Valid DLL\n";
+    }
+
     ~doublyLLL()
     {
         while(head!=nullptr)
@@ -200,6 +218,7 @@ int main()
     List.showList();
     List.reverseLL();
     List.showList();
+    List.verifyDLL();
     
     return 0;
 }
