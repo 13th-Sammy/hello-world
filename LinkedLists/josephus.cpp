@@ -30,8 +30,8 @@ int josephus(Node*& head, int k)
         delete del;
     }
     int survivor=temp->data;
-    delete temp;
-    return survivor;
+    delete temp; // Optional delete survivor node
+    return survivor; // if only care about value.
 }
 
 int main()
