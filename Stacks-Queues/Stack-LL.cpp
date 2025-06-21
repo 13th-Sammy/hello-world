@@ -35,6 +35,7 @@ class Stack
         if (top==nullptr)
         {
             std::cout << "Stack Underflow\n";
+            return;
         }
         Node* del=top;
         top=top->next;
