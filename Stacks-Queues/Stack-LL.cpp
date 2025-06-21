@@ -71,6 +71,7 @@ int main()
     Stack s;
     for(int i=1; i<=5; i++)
         s.push(i);
+    s.pop();
     cout << s.peek() << '\n';
     
     return 0;
