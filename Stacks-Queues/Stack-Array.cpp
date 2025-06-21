@@ -49,7 +49,7 @@ class Stack
 
     ~Stack()
     {
-        delete arr;
+        delete[] arr;
     }
 };
 
