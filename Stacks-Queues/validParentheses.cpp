@@ -29,7 +29,7 @@ bool isValidParentheses(string s)
 
 int main()
 {
-    string s="[{({})}]";
+    string s="[{({})}]{}";
     if(isValidParentheses(s))
         cout << "Valid\n";
     else
