@@ -4,7 +4,7 @@
 
 char firstNonRepeatChar(std::string s)
 {
-    std::queue<int> q;
+    std::queue<char> q;
     std::unordered_map<char, int> freq;
 
     for(int i=0; i<s.length(); i++)
