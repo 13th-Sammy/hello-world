@@ -48,4 +48,6 @@ int main()
     q.push(2);
     q.push(3);
     std::cout << q.front() << '\n';
+
+    return 0;
 }
